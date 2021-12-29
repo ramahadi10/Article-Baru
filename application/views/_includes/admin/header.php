@@ -114,15 +114,9 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="<?= base_url('newpost/data'); ?>" class="nav-link <?= active_menu('newpost'); ?>">
-                                    <i class="nav-icon fas fa-newspaper fa-fw"></i>
-                                    <p>Post</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
                                 <a href="<?= base_url('post/data'); ?>" class="nav-link <?= active_menu('post'); ?>">
                                     <i class="nav-icon fas fa-newspaper fa-fw"></i>
-                                    <p>New Post</p>
+                                    <p>Post</p>
                                 </a>
                             </li>
                         <?php endif; ?>

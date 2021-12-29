@@ -16,18 +16,6 @@ function admin_template($view, $data)
     $ci->load->view('_includes/admin/footer.php');
 }
 
-function get_category($id = null)
-{
-    $ci = get_instance();
-
-    if ($id == null) {
-        return $ci->main->get('category');
-    } else {
-        $query = $ci->main->get_where('category', ['category_id' => $id]);
-        return $query->category_name;
-    }
-}
-
 function setMsg($type, $msg)
 {
     $ci = get_instance();

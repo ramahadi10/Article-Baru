@@ -35,7 +35,7 @@
                         <td width="100"><?= $row->update_date; ?></td>
                         <td width="100" class="text-right">
                             <div class="btn-group">
-                                <a href="<?= base_url('post/view/') . $row->category;?>" class="btn btn-default btn-sm" target="_blank"><i class="fa fa-eye"></i></a>
+                                <a href="<?= base_url('post/view/') . $row->title;?>" class="btn btn-default btn-sm" target="_blank"><i class="fa fa-eye"></i></a>
                                 <a href="<?= base_url('post/edit/') . $row->post_id; ?>" class="btn btn-default btn-sm"><i class="fa fa-edit"></i></a>
                                 <a href="<?= base_url('post/delete/') . $row->post_id; ?>" onclick="return confirm('Confirm Delete ?');" class="btn btn-default btn-sm"><i class="fa fa-trash"></i></a>
                             </div>

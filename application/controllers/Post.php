@@ -20,9 +20,7 @@ class Post extends CI_Controller
 
         $data['title']  = "Post Detail";
         $data['post']   = $this->post->get_post_by_slug($slug);
-        $data['selected_category'] = $data['post']->category;
-        $data['recent_posts'] = $this->post->recent_post($slug);
-
+        
         public_template('post/view', $data);
     }
 
@@ -32,17 +30,15 @@ class Post extends CI_Controller
         $category = $this->input->get('posts', true);
 
         $config['base_url'] = base_url('post/index');
-        $config['total_rows'] = $this->post->count_data($search, $category);
+        $config['total_rows'] = $this->post->count_data($search);
         $config['per_page'] = 6;
         $config['reuse_query_string'] = TRUE;
 
         $this->pagination->initialize($config);
 
         $start = $this->uri->segment(3);
-        $data['posts'] = $this->post->get_all_post($config['per_page'], $start, $search, $category);
-        $data['category'] = $this->main->get('posts');
+        $data['posts'] = $this->post->get_all_post($config['per_page'], $start, $search);
         $data['search'] = $search;
-        $data['selected_category'] = $category;
         $data['title'] = "Home";
 
         public_template('post/list', $data);
@@ -60,7 +56,7 @@ class Post extends CI_Controller
     private function validation()
     {
         $this->form_validation->set_rules('title', 'Title', 'required|trim|min_length[20]');
-        $this->form_validation->set_rules('content', 'Post Body', 'required|trim|min_length[200]');
+        $this->form_validation->set_rules('content', 'Content', 'required|trim|min_length[200]');
         $this->form_validation->set_rules('category', 'Category', 'required|min_length[3]');
         $this->form_validation->set_rules('status', 'Status', 'required|in_list[Publish, Draft, Thrash]');
         
@@ -166,7 +162,6 @@ class Post extends CI_Controller
         $this->main->update('posts', $input, $where);
         redirect('post/data');
     }
-
     
 
     public function delete($post_id)

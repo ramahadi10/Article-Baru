@@ -23,11 +23,11 @@
             <div class="card-body">
                 <div class="form-group">
                     <label for="title">Post Title</label>
-                    <input id="title" name="title" class="form-control" type="text" placeholder="Post Title..." value="<?= set_value('title'); ?>" autocomplete="off">
+                    <input id="title" name="title" class="form-control" type="text" placeholder="Title..." value="<?= set_value('title'); ?>">
                     <?= form_error('title'); ?>
                 </div>
-                <label for="summernote">Post Content</label>
-                <textarea id="summernote" class="form-control" rows="6" name="content" placeholder="Post Body.."><?= set_value('content'); ?></textarea>
+                <label for="content">Post Content</label>
+                <textarea id="content" class="form-control" rows="6" name="content" placeholder="Content..."><?= set_value('content'); ?></textarea>
                 <?= form_error('content'); ?>
             </div>
         </div>
@@ -46,14 +46,14 @@
             </div>
             <div class="card-body">
                 <div class="form-group">
-                    <label for="category">Category</label>
-                    <input id="category" name="category" class="form-control" type="text" placeholder="Post Category..." value="<?= set_value('category'); ?>" autocomplete="off">
+                    <label for="category">Post Category</label>
+                    <input id="category" name="category" class="form-control" type="text" placeholder="Category..." value="<?= set_value('category'); ?>">
                     <?= form_error('category'); ?>
                 </div>
                 
                 <div class="form-group">
                     <label for="status">Post Status</label>
-                    <input id="status" name="status" class="form-control" type="text" placeholder="Post Status..." value="<?= set_value('status'); ?>" autocomplete="off">
+                    <input id="status" name="status" class="form-control" type="text" placeholder="Status..." value="<?= set_value('status'); ?>">
                     <?= form_error('status'); ?>
                 </div>
             </div>

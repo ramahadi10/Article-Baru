@@ -6,9 +6,7 @@
             <div class="page-pretitle">
                 Home
             </div>
-            <h2 class="page-title">
-                
-            </h2>
+            
         </div>
     </div>
 </div>
@@ -22,9 +20,13 @@
 <?php endif; ?>
 
 <div class="row row-cards">
-   
+    <?php
+    foreach ($posts as $post) :
+    ?>
+
         <div class="col-6 col-lg-4">
             <div class="card card-sm h-100">
+                
                 <div class="card-body">
                     <span class="badge bg-blue-lt mb-1">
                         <svg style="height: 12px;" xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -34,7 +36,7 @@
                         </svg>
                         <?= $post->category; ?>
                     </span>
-                    <a href="<?= base_url('post/view/')?>" class="text-decoration-none text-dark">
+                    <a href="<?= base_url('post/view/') . $post->title; ?>" class="text-decoration-none text-dark">
                         <h3 class="card-title font-weight-bold mb-0"><?= $post->title; ?></h3>
                     </a>
                 </div>
@@ -51,22 +53,12 @@
                                 <?= custom_date('d F Y', $post->create_date); ?>
                             </div>
                         </div>
-                        <div class="ml-auto">
-                            <a href="#" class="text-muted">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                    <path d="M4 21v-13a3 3 0 0 1 3 -3h10a3 3 0 0 1 3 3v6a3 3 0 0 1 -3 3h-9l-4 4" />
-                                    <line x1="8" y1="9" x2="16" y2="9" />
-                                    <line x1="8" y1="13" x2="14" y2="13" />
-                                </svg>
-                                <?= $this->comment->number_of_comments($post->post_id); ?>
-                            </a>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    <?php endforeach; ?>
+</div>
 
 <div class="row mt-4">
     <div class="col-12">

@@ -14,21 +14,12 @@
                             Home
                         </a>
                     </li>
-                    <li class="breadcrumb-item"><a href="#"><?= $post->category_name; ?></a></li>
                     <li class="breadcrumb-item active" aria-current="page"><?= $post->title; ?></li>
                 </ol>
             </div>
         </div>
         <div class="card mb-3">
             <div class="card-body">
-                <span class="badge bg-blue-lt mb-1">
-                    <svg style="height: 12px;" xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <path d="M11 3l9 9a1.5 1.5 0 0 1 0 2l-6 6a1.5 1.5 0 0 1 -2 0l-9 -9v-4a4 4 0 0 1 4 -4h4" />
-                        <circle cx="9" cy="9" r="2" />
-                    </svg>
-                    <?= $post->category_name; ?>
-                </span>
                 <h1 class="text-capitalize mb-3"><?= $post->title; ?></h1>
                 <div class="post-meta">
                     <div>
@@ -51,19 +42,12 @@
                             </svg>
                             <?= custom_date('d M Y', $post->create_date); ?>
                         </button>
-                        <button type="button" class="btn btn-sm">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                <path d="M3 20l1.3 -3.9a9 8 0 1 1 3.4 2.9l-4.7 1" />
-                                <line x1="12" y1="12" x2="12" y2="12.01" />
-                                <line x1="8" y1="12" x2="8" y2="12.01" />
-                                <line x1="16" y1="12" x2="16" y2="12.01" />
-                            </svg>
-                            <?= $this->comment->number_of_comments($post->post_id); ?> Comments
-                        </button>
                     </div>
                 </div>
                 <hr class="my-3">
+                <?php if ($post->title) : ?>
+                    
+                <?php endif; ?>
                 <div class="markdown">
                     <?= $post->content; ?>
                 </div>
@@ -104,10 +88,6 @@
                 </a>
             </div>
         </div>
-
-        <?php $this->load->view('comment/box'); ?>
     </div>
-    <div class="col-lg-4">
-        <?php $this->load->view('post/sidebar'); ?>
-    </div>
+    
 </div>
