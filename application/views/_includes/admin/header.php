@@ -39,7 +39,7 @@
                 </li>
                 <li class="nav-item">
                     <a target="_blank" href="<?= base_url(); ?>" class="nav-link">
-                        <i class="fa fa-fw fa-eye"></i> Lihat Website
+                        <i class="fa fa-fw fa-eye"></i> Preview
                     </a>
                 </li>
             </ul>

@@ -26,8 +26,8 @@
                     <input id="title" name="title" class="form-control" type="text" placeholder="Title..." value="<?= set_value('title'); ?>">
                     <?= form_error('title'); ?>
                 </div>
-                <label for="content">Post Content</label>
-                <textarea id="content" class="form-control" rows="6" name="content" placeholder="Content..."><?= set_value('content'); ?></textarea>
+                <label for="summernote">Post Content</label>
+                <textarea id="summernote" class="form-control" rows="6" name="content" placeholder="Content..."><?= set_value('content'); ?></textarea>
                 <?= form_error('content'); ?>
             </div>
         </div>
