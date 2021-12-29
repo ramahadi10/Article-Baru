@@ -23,9 +23,7 @@
     <div class="flex-fill d-flex flex-column justify-content-center py-4">
         <div class="container-tight py-6">
             <div class="text-center mb-4">
-                <!-- <a href="."><img src="<?= base_url(); ?>assets/static/logo.svg" height="36" alt=""></a> -->
-                <h1>Simple CMS</h1>
-                <small class="text-muted">by <strong>Alam Koding</strong></small>
+                <h1>Article Vision</h1>
             </div>
             <?= form_open('', ['class' => 'card card-md', 'autocomplete' => 'off']); ?>
             <div class="card-body">
@@ -55,9 +53,6 @@
                 </div>
             </div>
             <?= form_close(); ?>
-            <div class="text-center text-muted mt">
-                Don't have account yet? <a href="<?= base_url("signup"); ?>" tabindex="-1">Sign up</a>
-            </div>
         </div>
     </div>
     <!-- Libs JS -->
